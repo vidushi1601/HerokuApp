@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Python Flask Bucket List App</title>
+ 
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <script type = "text/javascript"  src = "/Flask/static/hello.js" ></script>
+ 
+</head>
+ 
+<body>
+ 
+    
+        <div class="jumbotron">
+            <h1>IMDB</h1>
+            <p class="lead"></p>
+            <label for="inputName" class="sr-only">Name</label>
+            <a id = "btnshow" class="btn btn-lg btn-success"  role="button" href="./api1">Show</a><br><br>
+            <a  id = "btnsearch" class="btn btn-lg btn-success"  role="button">Search</a>
+           
+            </p>
+        </div>
+ 
+        
+ <button id="btnSave">Save Click</button>
+           
+<script>
+$(document).ready(function () {
+	
+	$("#btnshow").click(function() {
+        $.ajax({
+            url: '/api1',
+            type: 'GET',
+            success: function(response) {
+            	alert(response);
+                // here you do whatever you want with the response variable
+              }
+        });
+    });
+
+/*     $("#btnSave").click(
+        function () {
+            AlertSave();
+        }            
+    );
+});
+ */
+/* function AlertSave() {
+alert("Alert Message OnClick");
+}
+
+ */</script>
+
+ 
+       
+ 
+    </body>
+ 
+</html>
