@@ -8,20 +8,6 @@ from imdbpie import Imdb
 
 
 app = Flask(__name__)
-@app.route('/api1', methods=['GET'])
-def api1():
-    print "Hello I am in api1"
-    #imdb = Imdb()
-    imdb = Imdb(anonymize=True)
-    print imdb
-    print type(imdb)
-    var1 = imdb.top_250()
-    print var1
-    """var2 = imdb.search_for_title("FightClub")
-    print var2
-    #req = request.var1"""
-    return jsonify(var1)
-    return render_template('index.html')
 
 @app.route('/', methods=['GET'])
 def index():
@@ -30,5 +16,4 @@ def index():
     
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 33507))
-    app.run(port=port,debug=True)
+    app.run(debug=True)
